@@ -1,0 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-decoration: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+}
+
+:root {
+  font-size: 62.5%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.play {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 1rem 2rem;
+  font-family: 'Press Start 2P', cursive;
+  font-weight: bold;
+  color: white;
+  border: 0.2rem solid white;
+  -webkit-transition: .2s ease-in-out;
+  transition: .2s ease-in-out;
+  background: #6023ed;
+  cursor: pointer;
+}
+
+.play:hover {
+  -webkit-filter: brightness(1.2);
+          filter: brightness(1.2);
+}
+
+@media (max-width: 411px) {
+  .play {
+    position: static;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+/*# sourceMappingURL=PlayButton.css.map */

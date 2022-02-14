@@ -1,0 +1,25 @@
+@import '../../base';
+
+.play {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 1rem 2rem;
+    font-family: 'Press Start 2P', cursive;
+    font-weight: bold;
+    color: $second-color;
+    border: .2rem solid $second-color;
+    transition: .2s ease-in-out;
+    background: $primary-color;
+    cursor: pointer;
+    &:hover {
+        filter: brightness(1.2);
+    }
+}
+
+@media (max-width: 411px) {
+    .play {
+        position: static;
+        @include flexCenter();
+    }
+}
