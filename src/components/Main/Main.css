@@ -84,9 +84,15 @@
 }
 
 .intro {
+  visibility: hidden;
+  opacity: 0;
   position: absolute;
   top: 0;
   left: 0;
+  background: #6023ed;
+  height: 100vh;
+  width: 100vw;
+  z-index: 1000;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -96,13 +102,10 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: #6023ed;
-  height: 100vh;
-  width: 100vw;
-  z-index: 200;
+  min-width: 320px;
 }
 
-.intro div {
+.intro .info {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -122,8 +125,13 @@
   padding: 1rem;
 }
 
-.intro div h1 {
+.intro .info h1 {
   margin-bottom: 3.2rem;
   text-align: center;
 }
-/*# sourceMappingURL=MainModal.css.map */
+
+.visible {
+  visibility: visible;
+  opacity: 1;
+}
+/*# sourceMappingURL=Main.css.map */

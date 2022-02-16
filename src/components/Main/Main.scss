@@ -1,16 +1,19 @@
 @import '../../base';
-@import '../PlayButton/PlayButton';
+@import './PlayButton/PlayButton';
 
 .intro {
+    visibility: hidden;
+    opacity: 0;
     position: absolute;
     top: 0;
     left: 0;
-    @include flexCenter();
     background: $primary-color;
     height: 100vh;
     width: 100vw;
-    z-index: 200;
-    div {
+    z-index: 1000;
+    @include flexCenter();
+    @include minWidth();
+    .info {
         @include flexCenter();
         position: relative;
         flex-direction: column;
@@ -23,3 +26,9 @@
         }
     }
 }
+
+.visible {
+    visibility: visible;
+    opacity: 1;
+}
+

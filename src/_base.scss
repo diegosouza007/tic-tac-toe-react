@@ -30,3 +30,7 @@ $second-color: white;
 @mixin dropShadow() {
     box-shadow: rgba(0, 0, 0, 0.20) 0px 3px 6px, rgba(0, 0, 0, 0.30) 0px 3px 6px;
 }
+
+@mixin minWidth {
+    min-width: 320px;
+}

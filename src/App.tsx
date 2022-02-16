@@ -1,11 +1,11 @@
 import React from 'react'
 import './App.scss'
-import MainModal from './components/MainModal/MainModal'
+import Main from './components/Main/Main'
 
 function App() {
 
   return (
-    <MainModal />
+    <Main />
   )
 }
 
