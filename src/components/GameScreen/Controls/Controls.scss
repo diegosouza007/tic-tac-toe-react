@@ -1,0 +1,13 @@
+.controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 2.5rem;
+    width: 100%;
+}
+
+.material-icons {
+    font-size: 3rem;
+    cursor: pointer;
+}

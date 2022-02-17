@@ -33,13 +33,15 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  min-width: 320px;
+  visibility: hidden;
+  opacity: 0;
   position: absolute;
   top: 0;
   left: 0;
   background: #6023ed;
   height: 100vh;
   width: 100vw;
-  min-width: 320px;
 }
 
 .options {
@@ -75,7 +77,7 @@
   padding: 1rem 2rem;
   color: #6023ed;
   text-align: center;
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
   background-color: white;
   -webkit-transition: ease-in-out .2s;
   transition: ease-in-out .2s;
@@ -92,5 +94,10 @@
 .options h2 {
   font-size: clamp(2vw, 4rem, 20vw);
   margin-bottom: 4rem;
+}
+
+.visible {
+  visibility: visible;
+  opacity: 1;
 }
 /*# sourceMappingURL=Options.css.map */

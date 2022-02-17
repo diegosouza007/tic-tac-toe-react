@@ -1,0 +1,19 @@
+@import '../../base';
+
+.game {
+    @include minWidth();
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    background: $primary-color;
+    height: 100vh;
+    width: 100vw;
+    max-width: 70rem;
+    gap: 2rem;
+}
+
+.visible {
+    visibility: visible;
+    opacity: 1;
+}

@@ -2,13 +2,15 @@
 
 .menu {
     @include flexCenter();
+    @include minWidth();
+    visibility: hidden;
+    opacity: 0;
     position: absolute;
     top: 0;
     left: 0;
     background: $primary-color;
     height: 100vh;
     width: 100vw;
-    @include minWidth();
 }
 
 .options {
@@ -31,7 +33,7 @@
         padding: 1rem 2rem;
         color: $primary-color;
         text-align: center;
-        font-family: 'Press Start 2P', cursive;
+        font-family: $font-secondary;
         background-color: $second-color;
         transition: ease-in-out .2s;
         @include dropShadow();
@@ -44,4 +46,9 @@
         font-size: clamp(2vw, 4rem, 20vw);
         margin-bottom: 4rem;
     }
+}
+
+.visible {
+    visibility: visible;
+    opacity: 1;
 }

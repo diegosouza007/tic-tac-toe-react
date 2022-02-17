@@ -14,5 +14,5 @@ export default function Options() {
           </ul>
       </div>
     </div>
-  )
+  );
 }

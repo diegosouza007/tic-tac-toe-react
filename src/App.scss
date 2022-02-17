@@ -1,19 +1,16 @@
 /* reset button */
 @import 'base';
 
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.content {
     color: $second-color;
     background: $primary-color;
     width: 100vw;
     height: 100vh;
     @include minWidth();
+    @include flexCenter();
 }
 
 div {
-    font-family: 'Bangers', cursive;
+    font-family: $font-primary;
     font-size: 5rem;
-
 }

@@ -1,0 +1,136 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-decoration: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+}
+
+:root {
+  font-size: 62.5%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.board {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (auto)[3];
+      grid-template-columns: repeat(3, auto);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.cell {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 12rem;
+  width: 12rem;
+  border: 0.6rem solid #2f0b80;
+  font-family: "Bangers", cursive;
+  font-size: calc($cell-size * 0.9);
+  color: white;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.cell:nth-child(-n + 9) {
+  border-top: none;
+  border-left: none;
+}
+
+.cell:nth-child(n + 7) {
+  border-bottom: none;
+}
+
+.cell:nth-child(n + 7) {
+  border-bottom: none;
+}
+
+.cell:nth-child(3n +3) {
+  border-right: none;
+}
+
+.cell.x::after,
+.cell.x::before,
+.cell.o::before,
+.cell.o::after {
+  background-color: white;
+}
+
+.board.o .cell:not(.x):not(.o):hover::before,
+.board.x .cell:not(.x):not(.o):hover::before,
+.board.x .cell:not(.x):not(.o):hover::after {
+  background-color: yellow;
+}
+
+.board.x .cell:not(.x):not(.o):hover::before,
+.board.x .cell:not(.x):not(.o):hover::after,
+.cell.x::after,
+.cell.x::before {
+  position: absolute;
+  content: "";
+  width: calc(var($symbol-size) * 0.2);
+  height: var(calc($cell-size * 0.9));
+}
+
+.board.x .cell:not(.x):not(.o):hover::before,
+.cell.x::after {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.board.x .cell:not(.x):not(.o):hover::after,
+.cell.x::before {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.board.o .cell:not(.x):not(.o):hover::before,
+.board.o .cell:not(.x):not(.o):hover::after,
+.cell.o::after,
+.cell.o::before {
+  position: absolute;
+  content: "";
+  width: var(calc($cell-size * 0.9));
+  height: var(calc($cell-size * 0.9));
+  border-radius: 50%;
+}
+
+.board.o .cell:not(.x):not(.o):hover::before,
+.cell.o::before {
+  width: calc(var($symbol-size) * 0.9);
+  height: calc(var($symbol-size) * 0.9);
+}
+
+.board.o .cell:not(.x):not(.o):hover::after,
+.cell.o::after {
+  width: calc(var($symbol-size) * 0.5);
+  height: calc(var($symbol-size) * 0.5);
+  background-color: yellow;
+}
+
+.cell.x,
+.cell.o {
+  cursor: not-allowed;
+}
+/*# sourceMappingURL=GameBoard.css.map */

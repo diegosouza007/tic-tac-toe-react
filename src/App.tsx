@@ -6,7 +6,7 @@ function App() {
 
   return (
     <Main />
-  )
+  );
 }
 
-export default App
+export default App;
