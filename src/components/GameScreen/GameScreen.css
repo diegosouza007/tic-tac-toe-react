@@ -24,7 +24,7 @@
 }
 
 .game {
-  min-width: 320px;
+  min-width: 362px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

@@ -9,14 +9,13 @@
 .cell {
     position: relative;
     display: flex;
-    height: $cell-size;
-    width: $cell-size;
-    border: .6rem solid $third-color;
-    font-family: $font-primary;
-    font-size: $symbol-size;
-    color: $second-color;
     justify-content: center;
     align-items: center;
+    font-size: $symbol-size;
+    height: $cell-size;
+    width: $cell-size;
+    color: $second-color;
+    border: .6rem solid $third-color;
     cursor: pointer;
     &:nth-child(-n + 9) {
         border-top: none;
@@ -33,64 +32,44 @@
     }
 }
 
-.cell.x::after,
-.cell.x::before,
-.cell.o::before,
-.cell.o::after {
-    background-color: $second-color;
-}
-
-.board.o .cell:not(.x):not(.o):hover::before,
-.board.x .cell:not(.x):not(.o):hover::before,
-.board.x .cell:not(.x):not(.o):hover::after {
-    background-color: yellow;
-}
-
-.board.x .cell:not(.x):not(.o):hover::before,
-.board.x .cell:not(.x):not(.o):hover::after,
-.cell.x::after,
-.cell.x::before {
-    position: absolute;
-    content: "";
-    width: calc(var($symbol-size) * 0.2);
-    height: var($symbol-size);
-}
-
-.board.x .cell:not(.x):not(.o):hover::before,
-.cell.x::after {
-    transform: rotate(45deg);
-}
-
-.board.x .cell:not(.x):not(.o):hover::after,
-.cell.x::before {
-    transform: rotate(-45deg);
-}
-
-.board.o .cell:not(.x):not(.o):hover::before,
-.board.o .cell:not(.x):not(.o):hover::after,
-.cell.o::after,
-.cell.o::before {
-    position: absolute;
-    content: "";
-    width: var($symbol-size);
-    height: var($symbol-size);
-    border-radius: 50%;
-}
-
-.board.o .cell:not(.x):not(.o):hover::before,
-.cell.o::before {
-    width: calc(var($symbol-size) * 0.9);
-    height: calc(var($symbol-size) * 0.9);
-}
-
-.board.o .cell:not(.x):not(.o):hover::after,
-.cell.o::after {
-    width: calc(var($symbol-size) * 0.5);
-    height: calc(var($symbol-size) * 0.5);
-    background-color: yellow;
-}
-
 .cell.x,
 .cell.o {
     cursor: not-allowed;
+    &::after, &::before {
+        background-color: $second-color;
+    }
+}
+
+.cell.x {
+    &::after, &::before {
+        position: absolute;
+        content: "";
+        width: calc(#{$cell-size * 0.2});
+        height: $symbol-size;
+    }
+    &::after {
+        transform: rotate(45deg);
+    }
+    &::before {
+        transform: rotate(-45deg);
+    }
+}
+
+.cell.o {
+    &::after, &::before {
+        position: absolute;
+        content: "";
+        width: symbol-size;
+        height: $symbol-size;
+        border-radius: 50%;
+    }
+    &::after{
+        width: calc(#{$cell-size * 0.5});
+        height: calc(#{$cell-size * 0.5});
+        background-color: $primary-color;
+    }
+    &::before {
+        width: calc(#{$cell-size * 0.9});
+        height: calc(#{$cell-size * 0.9});
+    }
 }

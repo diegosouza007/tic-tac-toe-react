@@ -12,7 +12,7 @@ $font-secondary: 'Press Start 2P', cursive;
 // Board cells sizes
 
 $cell-size: 12rem;
-$symbol-size: calc($cell-size * 0.9);
+$symbol-size: calc(#{$cell-size * 0.9});
 
 * {
     margin: 0;
@@ -40,6 +40,6 @@ $symbol-size: calc($cell-size * 0.9);
     box-shadow: rgba(0, 0, 0, 0.20) 0px 3px 6px, rgba(0, 0, 0, 0.30) 0px 3px 6px;
 }
 
-@mixin minWidth {
-    min-width: 320px;
+@mixin minWidth() {
+    min-width: 362px;
 }

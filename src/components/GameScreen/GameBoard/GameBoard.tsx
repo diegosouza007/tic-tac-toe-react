@@ -5,7 +5,7 @@ export default function GameBoard() {
   return (
     <section className="board x">
       <div id="0" className="cell x"></div>
-      <div id="1" className="cell"></div>
+      <div id="1" className="cell o"></div>
       <div id="2" className="cell"></div>
       <div id="3" className="cell"></div>
       <div id="4" className="cell"></div>
