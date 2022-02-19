@@ -1,6 +1,6 @@
 @import '../../base';
 
-.menu {
+.menuOptions {
     @include flexCenter();
     @include minWidth();
     visibility: hidden;
@@ -12,6 +12,7 @@
     height: 100vh;
     width: 100vw;
     z-index: 1000;
+    transition: ease-in-out .5s;
 }
 
 .options {

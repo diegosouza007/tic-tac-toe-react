@@ -2,6 +2,9 @@
 
 .game {
     @include minWidth();
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -11,6 +14,8 @@
     width: 100vw;
     max-width: 70rem;
     gap: 2rem;
+    z-index: 1000;
+    transition: ease-in-out .5s;
 }
 
 .visible {

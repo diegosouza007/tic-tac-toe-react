@@ -103,6 +103,8 @@
       -ms-flex-align: center;
           align-items: center;
   min-width: 362px;
+  -webkit-transition: ease-in-out .5s;
+  transition: ease-in-out .5s;
 }
 
 .intro .info {
@@ -134,4 +136,4 @@
   visibility: visible;
   opacity: 1;
 }
-/*# sourceMappingURL=Main.css.map */
+/*# sourceMappingURL=Intro.css.map */

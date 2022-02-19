@@ -3,7 +3,7 @@ import './DifficutyOptions.css';
 
 export default function Options() {
   return (
-    <div className="menu">
+    <div className="difficultyMode">
       <div className="options">
         <h2>Select a Difficulty</h2>
           <ul>

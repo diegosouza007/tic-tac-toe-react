@@ -1,12 +1,17 @@
-import React from 'react'
-import './App.scss'
-import Main from './components/Main/Main'
+import React from 'react';
+import Intro from './components/Intro/Intro';
+import MenuOptions from './components/MenuOptions/MenuOptions';
+import DifficutyOptions from './components/DifficutyOptions/DifficutyOptions';
+import GameScreen from './components/GameScreen/GameScreen';
+import './App.css'
 
-function App() {
-
+export default function MainModal() {
   return (
-    <Main />
+    <div className="content">
+      <Intro />
+      <MenuOptions />
+      <DifficutyOptions />
+      <GameScreen />
+    </div>
   );
 }
-
-export default App;

@@ -13,6 +13,7 @@
     z-index: 1000;
     @include flexCenter();
     @include minWidth();
+    transition: ease-in-out .5s;
     .info {
         @include flexCenter();
         position: relative;
@@ -31,4 +32,3 @@
     visibility: visible;
     opacity: 1;
 }
-

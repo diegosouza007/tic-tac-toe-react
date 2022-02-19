@@ -2,8 +2,9 @@
 @import 'base';
 
 .content {
+    position: relative;
     color: $second-color;
-    background: $primary-color;
+    background-color: $primary-color;
     width: 100vw;
     height: 100vh;
     @include minWidth();
