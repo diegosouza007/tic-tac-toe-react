@@ -42,6 +42,7 @@
   background: #6023ed;
   height: 100vh;
   width: 100vw;
+  z-index: 1000;
 }
 
 .options {
@@ -100,4 +101,4 @@
   visibility: visible;
   opacity: 1;
 }
-/*# sourceMappingURL=Options.css.map */
+/*# sourceMappingURL=DifficutyOptions.css.map */

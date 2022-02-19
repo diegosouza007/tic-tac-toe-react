@@ -1,16 +1,14 @@
 import React from 'react';
-import './Options.css';
+import './MenuOptions.css';
 
 export default function Options() {
   return (
     <div className="menu">
       <div className="options">
-        <h2>Select a Difficulty</h2>
+        <h2>Game mode select</h2>
           <ul>
-            <li>EASY</li>
-            <li>NORMAL</li>
-            <li>HARD</li>
-            <li>IMPOSSIBLE</li>
+            <li>PLAYER VS BOT</li>
+            <li>PLAYER VS PLAYER</li>
           </ul>
       </div>
     </div>

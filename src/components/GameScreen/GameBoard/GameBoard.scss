@@ -3,7 +3,6 @@
 .board {
     display: grid;
     grid-template-columns: repeat(3, auto);
-    justify-content: center;
 }
 
 .cell {
@@ -14,18 +13,14 @@
     font-size: $symbol-size;
     height: $cell-size;
     width: $cell-size;
-    color: $second-color;
     border: .6rem solid $third-color;
     cursor: pointer;
+    &:nth-child(n + 7) {
+        border-bottom: none;
+    }
     &:nth-child(-n + 9) {
         border-top: none;
         border-left: none;
-    }
-    &:nth-child(n + 7) {
-        border-bottom: none;
-    }
-    &:nth-child(n + 7) {
-        border-bottom: none;
     }
     &:nth-child(3n +3) {
         border-right: none;
@@ -40,36 +35,79 @@
     }
 }
 
-.cell.x {
+.cell:not(.x):not(.o):hover {
     &::after, &::before {
-        position: absolute;
-        content: "";
-        width: calc(#{$cell-size * 0.2});
-        height: $symbol-size;
-    }
-    &::after {
-        transform: rotate(45deg);
-    }
-    &::before {
-        transform: rotate(-45deg);
+    background-color: $hover-color;
     }
 }
 
-.cell.o {
-    &::after, &::before {
-        position: absolute;
-        content: "";
-        width: symbol-size;
-        height: $symbol-size;
-        border-radius: 50%;
+.board.x {
+    .cell:not(.x):not(.o):hover, .cell.x {
+        &::after, &::before {
+            position: absolute;
+            content: "";
+            width: calc(#{$cell-size * 0.2});
+            height: $symbol-size;
+        }
+        &::after {
+            transform: rotate(45deg);
+        }
+        &::before {
+            transform: rotate(-45deg);
+        }
     }
-    &::after{
-        width: calc(#{$cell-size * 0.5});
-        height: calc(#{$cell-size * 0.5});
-        background-color: $primary-color;
-    }
-    &::before {
-        width: calc(#{$cell-size * 0.9});
-        height: calc(#{$cell-size * 0.9});
+    .cell.o {
+        &::after, &::before {
+            position: absolute;
+            content: "";
+            width: $symbol-size;
+            height: $symbol-size;
+            border-radius: 50%;
+        }
+        &::after{
+            width: calc(#{$cell-size * 0.4});
+            height: calc(#{$cell-size * 0.4});
+            background-color: $primary-color;
+        }
+        &::before {
+            width: calc(#{$cell-size * 0.8});
+            height: calc(#{$cell-size * 0.8});
+        }
     }
 }
+
+.board.o {
+    .cell:not(.x):not(.o):hover, .cell.o {
+        &::after, &::before {
+            position: absolute;
+            content: "";
+            width: $symbol-size;
+            height: $symbol-size;
+            border-radius: 50%;
+        }
+        &::after{
+            width: calc(#{$cell-size * 0.4});
+            height: calc(#{$cell-size * 0.4});
+            background-color: $primary-color;
+        }
+        &::before {
+            width: calc(#{$cell-size * 0.8});
+            height: calc(#{$cell-size * 0.8});
+        }
+    }
+    .cell.x {
+        &::after, &::before {
+            position: absolute;
+            content: "";
+            width: calc(#{$cell-size * 0.2});
+            height: $symbol-size;
+        }
+        &::after {
+            transform: rotate(45deg);
+        }
+        &::before {
+            transform: rotate(-45deg);
+        }
+    }
+}
+

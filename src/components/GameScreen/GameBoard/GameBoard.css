@@ -28,9 +28,6 @@
   display: grid;
   -ms-grid-columns: (auto)[3];
       grid-template-columns: repeat(3, auto);
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
 }
 
 .cell {
@@ -47,22 +44,17 @@
   font-size: calc(10.8rem);
   height: 12rem;
   width: 12rem;
-  color: white;
   border: 0.6rem solid #2f0b80;
   cursor: pointer;
+}
+
+.cell:nth-child(n + 7) {
+  border-bottom: none;
 }
 
 .cell:nth-child(-n + 9) {
   border-top: none;
   border-left: none;
-}
-
-.cell:nth-child(n + 7) {
-  border-bottom: none;
-}
-
-.cell:nth-child(n + 7) {
-  border-bottom: none;
 }
 
 .cell:nth-child(3n +3) {
@@ -80,39 +72,79 @@
   background-color: white;
 }
 
-.cell.x::after, .cell.x::before {
+.cell:not(.x):not(.o):hover::after, .cell:not(.x):not(.o):hover::before {
+  background-color: #7844f0;
+}
+
+.board.x .cell:not(.x):not(.o):hover::after, .board.x .cell:not(.x):not(.o):hover::before, .board.x .cell.x::after, .board.x .cell.x::before {
   position: absolute;
   content: "";
   width: calc(2.4rem);
   height: calc(10.8rem);
 }
 
-.cell.x::after {
+.board.x .cell:not(.x):not(.o):hover::after, .board.x .cell.x::after {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
 }
 
-.cell.x::before {
+.board.x .cell:not(.x):not(.o):hover::before, .board.x .cell.x::before {
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
 }
 
-.cell.o::after, .cell.o::before {
+.board.x .cell.o::after, .board.x .cell.o::before {
   position: absolute;
   content: "";
-  width: symbol-size;
+  width: calc(10.8rem);
   height: calc(10.8rem);
   border-radius: 50%;
 }
 
-.cell.o::after {
-  width: calc(6rem);
-  height: calc(6rem);
+.board.x .cell.o::after {
+  width: calc(4.8rem);
+  height: calc(4.8rem);
   background-color: #6023ed;
 }
 
-.cell.o::before {
+.board.x .cell.o::before {
+  width: calc(9.6rem);
+  height: calc(9.6rem);
+}
+
+.board.o .cell:not(.x):not(.o):hover::after, .board.o .cell:not(.x):not(.o):hover::before, .board.o .cell.o::after, .board.o .cell.o::before {
+  position: absolute;
+  content: "";
   width: calc(10.8rem);
   height: calc(10.8rem);
+  border-radius: 50%;
+}
+
+.board.o .cell:not(.x):not(.o):hover::after, .board.o .cell.o::after {
+  width: calc(4.8rem);
+  height: calc(4.8rem);
+  background-color: #6023ed;
+}
+
+.board.o .cell:not(.x):not(.o):hover::before, .board.o .cell.o::before {
+  width: calc(9.6rem);
+  height: calc(9.6rem);
+}
+
+.board.o .cell.x::after, .board.o .cell.x::before {
+  position: absolute;
+  content: "";
+  width: calc(2.4rem);
+  height: calc(10.8rem);
+}
+
+.board.o .cell.x::after {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.board.o .cell.x::before {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 /*# sourceMappingURL=GameBoard.css.map */

@@ -1,7 +1,7 @@
 import React from 'react';
 import PlayButton from './PlayButton/PlayButton';
 import './Main.css';
-import Options from '../Options/Options';
+import DifficutyOptions from '../DifficutyOptions/DifficutyOptions';
 import GameScreen from '../GameScreen/GameScreen';
 
 export default function MainModal() {
@@ -13,7 +13,7 @@ export default function MainModal() {
               <PlayButton />
           </div>
       </div>
-      <Options />
+      <DifficutyOptions />
       <GameScreen />
     </div>
   );
