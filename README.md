@@ -31,3 +31,6 @@ Use this command to run:
 ```
 yarn dev
 ```
+## Spoiler preview
+
+![Selection_008](https://user-images.githubusercontent.com/11907759/154821962-f7d2a5ea-cd3e-41cd-b18d-df3209cc443c.png)
