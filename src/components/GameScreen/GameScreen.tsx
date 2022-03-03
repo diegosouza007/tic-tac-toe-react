@@ -4,7 +4,7 @@ import GameBoard from './GameBoard/GameBoard';
 import './GameScreen.css';
 import Score from './Score/Score';
 
-export default function GameScreen() {
+export default function GameScreen(props: any) {
   return (
     <div className="game">
         <Controls />

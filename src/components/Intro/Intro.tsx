@@ -1,14 +1,18 @@
 import React from 'react';
 import PlayButton from './PlayButton/PlayButton';
+import { Screen } from '../../types/Screen';
 import './Intro.css';
 
-export default function Intro() {
+const Intro = (props: any) => {
+
   return (
-    <div className="intro">
+    <div className={props.screen.intro ? "intro visible" : "intro"}>
         <div className="info">
         <h1>TIC TAC TOE</h1>
-        <PlayButton />
+        <PlayButton onHandleMenu={props.onHandleMenu}/>
         </div>
     </div>
   )
 }
+
+export default Intro;

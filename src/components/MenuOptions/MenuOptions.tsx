@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './MenuOptions.css';
 
-export default function MenuOptions() {
+export default function MenuOptions(props: any) {
   return (
-    <div className="menuOptions">
+    <div className={props.screen.menu ? "menuOptions visible" : "menuOptions"}>
       <div className="options">
         <h2>Mode select</h2>
           <ul>
