@@ -1,33 +1,27 @@
 import React, { useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
 import Intro from './components/Intro/Intro';
-import MenuOptions from './components/MenuOptions/MenuOptions';
-import DifficutyOptions from './components/DifficutyOptions/DifficutyOptions';
-import GameScreen from './components/GameScreen/GameScreen';
-import { Screen } from './types/Screen';
+import Mode from './components/Mode/Mode';
+import Difficuty from './components/Difficuty/Difficuty';
+import Game from './components/Game/Game';
+
+import { ScreenProvider } from './ScreenContext';
 import './App.css';
 
-export default function MainModal() {
-
-  const [screen, setScreen ] = useState<Screen>({
-    intro: true,
-    menu: false,
-    difficuty: false,
-    gameScreen: false,
-  });
-
-  function onHandleMenu() {
-      const updatedOptions = { ...screen }
-      updatedOptions.intro = !updatedOptions.intro;
-      updatedOptions.menu = !updatedOptions.menu;
-      setScreen(updatedOptions);
-  }
-
+const App: React.FC = () => {
   return (
     <div className="content">
-      <Intro screen={screen} onHandleMenu={onHandleMenu}/>
-      <MenuOptions screen={screen}/>
-      <DifficutyOptions screen={screen}/>
-      <GameScreen screen={screen}/>
+      <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Intro />}/>
+        <Route path="mode" element={<Mode />}/>
+        <Route path="difficulty" element={<Difficuty />}/>
+        <Route path="game" element={<Game />}/>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
+
+export default App;

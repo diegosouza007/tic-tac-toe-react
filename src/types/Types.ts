@@ -4,3 +4,9 @@ export type Screen = {
     difficuty: boolean;  
     gameScreen: boolean;
 }
+
+export type Options = {
+    mode: string | undefined;
+    difficuty: string | undefined;
+    score: number;
+}

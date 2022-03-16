@@ -1,5 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
-export default function PlayButton(props: any) {
-  return <button className='play' onClick={props.onHandleMenu}>PLAY</button>
+export default function PlayButton() {
+  return <button className='play'>PLAY</button>
 }

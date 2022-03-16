@@ -1,9 +1,9 @@
 import React from 'react';
-import './DifficutyOptions.css';
+import './Difficuty.css';
 
-export default function Options(props: any) {
+export default function Options() {
   return (
-    <div className="difficultyMode">
+    <div className="difficulty">
       <div className="options">
         <h2>Select a Difficulty</h2>
           <ul>

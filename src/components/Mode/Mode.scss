@@ -3,8 +3,6 @@
 .menuOptions {
     @include flexCenter();
     @include minWidth();
-    visibility: hidden;
-    opacity: 0;
     position: absolute;
     top: 0;
     left: 0;
@@ -48,9 +46,4 @@
         font-size: clamp(2vw, 4rem, 20vw);
         margin-bottom: 4rem;
     }
-}
-
-.visible {
-    visibility: visible;
-    opacity: 1;
 }

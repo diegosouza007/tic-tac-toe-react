@@ -24,9 +24,7 @@
 }
 
 .game {
-  min-width: 362px;
-  visibility: hidden;
-  opacity: 0;
+  min-width: 365px;
   position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -50,9 +48,4 @@
   -webkit-transition: ease-in-out .5s;
   transition: ease-in-out .5s;
 }
-
-.visible {
-  visibility: visible;
-  opacity: 1;
-}
-/*# sourceMappingURL=GameScreen.css.map */
+/*# sourceMappingURL=Game.css.map */
