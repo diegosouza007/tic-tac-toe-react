@@ -17,7 +17,7 @@ git clone https://github.com/diegosouza007/tic-tac-toe-react.git
 ```
 
 ```
-cd simple-to-do
+cd tic-tac-toe-react
 ```
 
 ```
