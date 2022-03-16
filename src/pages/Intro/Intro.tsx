@@ -1,7 +1,6 @@
 import React from "react";
 
 import PlayButton from "./PlayButton/PlayButton";
-
 import "./Intro.css";
 
 const Intro = () => {
