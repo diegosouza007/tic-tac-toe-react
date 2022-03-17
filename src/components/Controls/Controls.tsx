@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Controls.css';
 
-export default function Controlls() {
+const Controlls: React.FC = () => {
 
   const navigate = useNavigate();
 
@@ -21,3 +21,5 @@ export default function Controlls() {
     </div>
   )
 }
+
+export default Controlls;

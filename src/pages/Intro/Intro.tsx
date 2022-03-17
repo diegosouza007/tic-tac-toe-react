@@ -3,7 +3,7 @@ import React from "react";
 import PlayButton from "./PlayButton/PlayButton";
 import "./Intro.css";
 
-const Intro = () => {
+const Intro: React.FC = () => {
   return (
     <div className="intro">
       <div className="info">

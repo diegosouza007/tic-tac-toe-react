@@ -1,17 +1,29 @@
 import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import OptionsContext from '../../OptionsContext';
+
 import './Mode.css';
 
-export default function MenuOptions() {
+const Mode: React.FC = () => {
 
   const navigate = useNavigate();
+  const { options, setOptions } = useContext(OptionsContext);
 
   const selectMode: React.MouseEventHandler<HTMLElement> = (event) => {
     const target = event.target as Element;
     const mode = target.id;
 
-    navigate("/difficulty");
+    let newOptions = options; 
+
+    if (mode === "single") {
+      newOptions.mode = "single";
+    } else {
+      newOptions.mode = "versus";
+    }
+    setOptions(newOptions);
+
+    options.mode === 'single' ? navigate("/difficulty") : navigate("/game");
   }
 
   return (
@@ -26,3 +38,5 @@ export default function MenuOptions() {
     </div>
   );
 }
+
+export default Mode;

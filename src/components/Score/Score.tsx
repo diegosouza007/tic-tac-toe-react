@@ -1,7 +1,7 @@
 import React from 'react';
 import './Score.css';
 
-export default function Score() {
+const Score: React.FC = () => {
   return (
     <div className="score">
       <div className="player">
@@ -23,3 +23,5 @@ export default function Score() {
     </div>
   );
 }
+
+export default Score;

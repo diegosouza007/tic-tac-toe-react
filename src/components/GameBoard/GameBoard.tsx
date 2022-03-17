@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import OptionsContext from '../../OptionsContext';
 import './GameBoard.css';
 
-export default function GameBoard() {
+const GameBoard: React.FC = () => {
+
+  const { options, setOptions } = useContext(OptionsContext);
+
+  console.log(options)
+
   return (
     <section className="board x">
       <div id="0" className="cell x"></div>
@@ -16,3 +22,5 @@ export default function GameBoard() {
     </section>
   );
 }
+
+export default GameBoard;
