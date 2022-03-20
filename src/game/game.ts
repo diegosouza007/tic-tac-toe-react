@@ -1,91 +1,87 @@
-// Need to transform in a object (singleton)
+import { Game } from '../types/Types';
 
+const game: Game = {
+    CONTROLS: {
+        board: ['', '', '', '', '', '', '', '', ''],
+        playerTurn: 0,
+        flags: ['x', 'o'],
+        isGameOver: false,
+        score: [0, 0]
+    },
+    winnerSequences: [
+        [0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8],
+        [0, 3, 6],
+        [1, 4, 7],
+        [2, 5, 8],
+        [0, 4, 8],
+        [2, 4, 6],
+    ],
+    handleMove: function(position) {
+        this.CONTROLS.board[position] = this.CONTROLS.flags[this.CONTROLS.playerTurn];
+        this.CONTROLS.playerTurn === 0 ? this.CONTROLS.playerTurn = 1 : this.CONTROLS.playerTurn = 0;
+    },
+    resetVariables: function() {
+        this.CONTROLS.board = ['', '', '', '', '', '', '', '', ''];
+        this.CONTROLS.playerTurn = 0;
+        this.CONTROLS.isGameOver = false;
+        this.CONTROLS.score = [0, 0];
+    },
+    clearBoard: function() {
+        this.CONTROLS.board = ['', '', '', '', '', '', '', '', ''];
+        this.CONTROLS.playerTurn = 0;
+        this.CONTROLS.isGameOver = false;
+    },
+    isWinner: function() {
 
-let gameMode = JSON.parse(localStorage.getItem('@tictactoe:gamemode'));
+    for (let i = 0; i < this.winnerSequences.length; i++) {
 
-const CONTROLS = {
-    board: ['', '', '', '', '', '', '', '', ''],
-    playerTurn: 0,
-    flags: ['x', 'o'],
-    isGameOver: false,
-    score: [0, 0]
-}
-
-const winnerSequences = [
-    [0, 1, 2],
-    [3, 4, 5],
-    [6, 7, 8],
-    [0, 3, 6],
-    [1, 4, 7],
-    [2, 5, 8],
-    [0, 4, 8],
-    [2, 4, 6],
-];
-
-function handleMove(position) {
-    CONTROLS.board[position] = CONTROLS.flags[CONTROLS.playerTurn];
-    CONTROLS.playerTurn === 0 ? CONTROLS.playerTurn = 1 : CONTROLS.playerTurn = 0;
-}
-
-function resetVariables() {
-    CONTROLS.board = ['', '', '', '', '', '', '', '', ''];
-    CONTROLS.playerTurn = 0;
-    CONTROLS.isGameOver = false;
-    CONTROLS.score = [0, 0];
-}
-
-function clearBoard() {
-    CONTROLS.board = ['', '', '', '', '', '', '', '', ''];
-    CONTROLS.playerTurn = 0;
-    CONTROLS.isGameOver = false;
-}
-
-function isWinner() {
-
-    for (let i = 0; i < winnerSequences.length; i++) {
-
-        let seq = winnerSequences[i];
+        let seq = this.winnerSequences[i];
 
         let pos1 = seq[0];
         let pos2 = seq[1];
         let pos3 = seq[2];
 
-        if (CONTROLS.board[pos1] == CONTROLS.board[pos2] &&
-            CONTROLS.board[pos1] == CONTROLS.board[pos3] &&
-            CONTROLS.board[pos1] != '') {
+        if (this.CONTROLS.board[pos1] == this.CONTROLS.board[pos2] &&
+            this.CONTROLS.board[pos1] == this.CONTROLS.board[pos3] &&
+            this.CONTROLS.board[pos1] != '') {
             return true;
         }
     }
+
     return false;
-}
 
-function isTiedGame() {
-
-    if (CONTROLS.board.includes('')) {
-        return false;
-    } else {
+    },
+    isTiedGame: function() {
+        if (this.CONTROLS.board.includes('')) {
+            return false;
+        } else {
         return true;
-    }
-}
+        }
+    },
+    getAvailablePositions: function() {
+        let arr = this.CONTROLS.board.filter(p => p === '');
+        return arr;
+    },
+    getRandomAvailablePosition: function() {
 
-function availablePositions() {
+        let position: number;
+        let number: number;
+        const newArr: number[] = []; 
 
-    let arr = CONTROLS.board.filter(p => p === '');
-    return arr
-}
+        this.CONTROLS.board.map((position, index) => {
+            if (position === '') {
+                newArr.push(index);
+            };
+        });
 
-let getRandomAvailablePosition = function() {
-
-    let [pos, number, newArr] = ['', '', []];
-
-    CONTROLS.board.map((pos, index) => {
-        if (pos === '') {
-            newArr.push(index);
-        };
-    })
-
-    pos = Math.floor(Math.random() * newArr.length);
-    number = newArr[pos];
+        position = Math.floor(Math.random() * newArr.length);
+        number = newArr[position];
 
     return number;
+    
+    },
 }
+
+export default game;
