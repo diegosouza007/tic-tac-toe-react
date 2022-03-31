@@ -1,20 +1,20 @@
 export type Options = {
     mode: string;
-    difficuty: string;
+    difficuty?: string;
 }
 
 export interface Game {
-    CONTROLS: {
+    controls: {
         board:  string[],
-        playerTurn: number,
         flags: string[],
-        isGameOver: boolean,
         score: number[],
+        isGameOver: boolean,
+        lockMode: boolean,
+        playerTurn: number,
     },
     winnerSequences: number[][],
     handleMove(position: number): void,
-    resetVariables(): void,
-    clearBoard(): void,
+    resetScore(): void,
     isWinner(): boolean,
     isTiedGame(): boolean,
     getAvailablePositions(): string[],

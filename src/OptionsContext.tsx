@@ -8,8 +8,7 @@ type PropsOptionsContext = {
 
 const DEFAULT_VALUE = {
     options: {
-        mode: "single",
-        difficuty: "easy",
+        mode: "versus",
     },
     setOptions: () => {},
 };

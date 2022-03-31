@@ -21,6 +21,7 @@ const Mode: React.FC = () => {
     } else {
       newOptions.mode = "versus";
     }
+    
     setOptions(newOptions);
 
     options.mode === 'single' ? navigate("/difficulty") : navigate("/game");
