@@ -4,7 +4,6 @@ const game: Game = {
     controls: {
         board: ['', '', '', '', '', '', '', '', ''],
         flags: ['x', 'o'],
-        score: [0, 0],
         isGameOver: false,
         lockMode: false,
         playerTurn: 0,
@@ -20,11 +19,10 @@ const game: Game = {
         [2, 4, 6],
     ],
     handleMove: function(position) {
-        this.controls.board[position] = this.controls.flags[this.controls.playerTurn];
+        if(this.controls.board[position] === '') {
+            this.controls.board[position] = this.controls.flags[this.controls.playerTurn];
+        }
         this.controls.playerTurn === 0 ? this.controls.playerTurn = 1 : this.controls.playerTurn = 0;
-    },
-    resetScore: function() {
-        this.controls.score = [0, 0];
     },
     isWinner: function() {
         for (let i = 0; i < this.winnerSequences.length; i++) {
@@ -70,6 +68,14 @@ const game: Game = {
 
         return number;
     },
+    clearBoard: function() {
+        this.controls.board = ['', '', '', '', '', '', '', '', ''];
+    },
+    newRound: function() {
+        this.clearBoard();
+        this.controls.playerTurn = 0;
+        this.controls.lockMode = false;
+    }
 }
 
 export default game;

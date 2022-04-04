@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import ScoreContext from '../../ScoreContext';
 import './Score.css';
 
 const Score: React.FC = () => {
+
+  const { score } = useContext(ScoreContext);
+
   return (
     <div className="score">
       <div className="player">
@@ -14,10 +18,10 @@ const Score: React.FC = () => {
       </div>
       <div className="playerScore">
         <span id="player-x-score">
-          <p>0</p>
+          <p>{score[0]}</p>
         </span>
         <span id="player-o-score">
-          <p>0</p>
+          <p>{score[1]}</p>
         </span>
       </div>
     </div>
