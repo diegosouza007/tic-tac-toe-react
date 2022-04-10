@@ -1,9 +1,8 @@
-import React, { useContext, useEffect, useState } from 'react';
-import ScoreContext from '../../ScoreContext';
-import './Score.css';
+import React, { useContext } from "react";
+import ScoreContext from "../../providers/ScoreContext";
+import "./Score.css";
 
 const Score: React.FC = () => {
-
   const { score } = useContext(ScoreContext);
 
   return (
@@ -26,6 +25,6 @@ const Score: React.FC = () => {
       </div>
     </div>
   );
-}
+};
 
 export default Score;

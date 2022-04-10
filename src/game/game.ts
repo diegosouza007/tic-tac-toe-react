@@ -6,7 +6,6 @@ const game: Game = {
         flags: ['x', 'o'],
         isGameOver: false,
         lockMode: false,
-        playerTurn: 0,
     },
     winnerSequences: [
         [0, 1, 2],
@@ -18,15 +17,14 @@ const game: Game = {
         [0, 4, 8],
         [2, 4, 6],
     ],
-    handleMove: function(position) {
-        if(this.controls.board[position] === '') {
-            this.controls.board[position] = this.controls.flags[this.controls.playerTurn];
+    handleMove: function (position, playerTurn) {
+        if (this.controls.board[position] === '') {
+            this.controls.board[position] = this.controls.flags[playerTurn];
         }
-        this.controls.playerTurn === 0 ? this.controls.playerTurn = 1 : this.controls.playerTurn = 0;
     },
-    isWinner: function() {
+    isWinner: function () {
         for (let i = 0; i < this.winnerSequences.length; i++) {
-        
+
             let seq: number[] = this.winnerSequences[i];
 
             let pos1: number = seq[0];
@@ -41,40 +39,34 @@ const game: Game = {
         }
         return false;
     },
-    isTiedGame: function() {
+    isTiedGame: function () {
         if (this.controls.board.includes('')) {
             return false;
         } else {
             return true;
         }
     },
-    getAvailablePositions: function() {
-        let arr: string[] = this.controls.board.filter(p => p === '');
-        return arr;
+    isPositionAvailable: function (position) {
+        return this.controls.board[position] === '';
     },
-    getRandomAvailablePosition: function() {
+    getRandomAvailablePosition: function () {
+        const newArr: number[] = [];
+        const minimum: number = 0;
         let position: number;
         let number: number;
-        const newArr: number[] = []; 
 
         this.controls.board.map((position, index) => {
             if (position === '') {
                 newArr.push(index);
             };
         });
-
         position = Math.floor(Math.random() * newArr.length);
         number = newArr[position];
 
         return number;
     },
-    clearBoard: function() {
+    clearBoard: function () {
         this.controls.board = ['', '', '', '', '', '', '', '', ''];
-    },
-    newRound: function() {
-        this.clearBoard();
-        this.controls.playerTurn = 0;
-        this.controls.lockMode = false;
     }
 }
 

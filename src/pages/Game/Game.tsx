@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Controls from '../../components/Controls/Controls';
 import GameBoard from '../../components/GameBoard/GameBoard';
 import Score from '../../components/Score/Score';
-import ScoreContext from '../../ScoreContext';
+import ScoreContext from '../../providers/ScoreContext';
 import './Game.css';
 
 export default function GameScreen() {
